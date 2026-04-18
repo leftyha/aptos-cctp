@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-04-18T00:00:00Z",
+  "commit": "4f1792eff6ed900c0fa3ea64063e7ba8cff73df4",
+  "branch": "work",
+  "default_branch": "unknown",
+  "languages": ["Move", "TypeScript", "Shell"],
+  "frameworks": ["Aptos Move", "Aptos TS SDK", "Jest"],
+  "package_managers": ["yarn"],
+  "dependency_manifests": [
+    "package.json",
+    "yarn.lock",
+    "packages/message_transmitter/Move.toml",
+    "packages/token_messenger_minter/Move.toml"
+  ],
+  "infra_files": [
+    ".github/workflows/ci.yaml",
+    "docker-start-containers.sh",
+    "docker-delete-containers.sh",
+    "docker-export-logs.sh",
+    "setup-evm-contracts.sh"
+  ],
+  "auth_related_modules": [
+    "packages/message_transmitter/sources/attester.move",
+    "packages/message_transmitter/sources/message_transmitter.move",
+    "packages/token_messenger_minter/sources/token_minter/token_controller.move",
+    "packages/token_messenger_minter/sources/token_messenger/token_messenger.move"
+  ],
+  "network_entry_points": [
+    "Move entry functions in message_transmitter and token_messenger_minter packages",
+    "TypeScript deployment and e2e scripts interacting with Aptos and EVM RPC"
+  ],
+  "hotspot_hashes": {
+    "packages/message_transmitter/sources/message_transmitter.move": "51a64f0c11929cf241f374731f8cf004479599dd4488180d8806516508e102ef",
+    "packages/message_transmitter/sources/attester.move": "176ac5c2a0570f51826d91967877f6fca5b97c913b0135545bdb9f61b8cd5993",
+    "packages/token_messenger_minter/sources/token_messenger/token_messenger.move": "68fe3693a3bd26f402ed0b7de72078a321878b574989b9bf8d9ef5630d2c5ce3",
+    "packages/token_messenger_minter/sources/token_minter/token_controller.move": "5de0e70a89178468abda3522e65d0cbff986758a3fbcb58b4b15a9954b4e8769",
+    "packages/token_messenger_minter/sources/token_minter/token_minter.move": "66c6905de142ae1bea83e7aa187ca6c72e17353cb20c04d5dea12b95fe0c3f7a"
+  }
+}
