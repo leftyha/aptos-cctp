@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-04-18T00:00:00Z",
+  "attack_surface": {
+    "move_entry_functions": [
+      "message_transmitter::message_transmitter::initialize_message_transmitter",
+      "message_transmitter::message_transmitter::set_max_message_body_size",
+      "message_transmitter::attester::enable_attester",
+      "message_transmitter::attester::disable_attester",
+      "message_transmitter::attester::update_attester_manager",
+      "message_transmitter::attester::set_signature_threshold",
+      "token_messenger_minter::token_messenger_minter::initialize_token_messenger_minter",
+      "token_messenger_minter::token_controller::set_max_burn_amount_per_message",
+      "token_messenger_minter::token_controller::link_token_pair",
+      "token_messenger_minter::token_controller::unlink_token_pair",
+      "token_messenger_minter::token_messenger::add_remote_token_messenger",
+      "token_messenger_minter::token_messenger::remove_remote_token_messenger"
+    ],
+    "public_non_entry_security_flows": [
+      "message_transmitter::message_transmitter::receive_message",
+      "message_transmitter::message_transmitter::replace_message",
+      "token_messenger_minter::token_messenger::deposit_for_burn",
+      "token_messenger_minter::token_messenger::deposit_for_burn_with_caller",
+      "token_messenger_minter::token_messenger::replace_deposit_for_burn",
+      "token_messenger_minter::token_messenger::handle_receive_message"
+    ],
+    "external_integrations": [
+      "Aptos resource account/object signer generation",
+      "secp256k1 attestation recovery",
+      "stablecoin::treasury mint/burn",
+      "TypeScript EVM RPC interactions in e2e and examples"
+    ]
+  },
+  "covered_this_run": [
+    "Cross-chain message verification and nonce handling",
+    "Attester threshold/signature checks",
+    "Token mint/burn authorization boundaries",
+    "Remote token messenger domain mapping checks"
+  ],
+  "not_covered": [
+    "Runtime behavior against live Aptos/EVM nodes (environment not configured)",
+    "Dependency CVE resolution beyond lockfile review"
+  ]
+}
